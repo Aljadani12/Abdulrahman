@@ -1,0 +1,58 @@
+// C# program to demonstrate example of switch statement
+using System;
+using System.IO;
+using System.Text;
+
+namespace IncludeHelp {
+    class Test {
+        // Main Method 
+        static void Main (string[] args) {
+            int day;
+
+            //input the day number
+            Console.Write ("Enter day number (0-6): ");
+            day = Convert.ToInt32 (Console.ReadLine ());
+
+            //checking 
+            switch (day) {
+                case 0:
+                    Console.WriteLine ("Sunday");
+                    break;
+                case 1:
+                    Console.WriteLine ("Monday");
+                    break;
+                case 2:
+                    Console.WriteLine ("Tuesday");
+                    break;
+                case 3:
+                    Console.WriteLine ("Wednesday");
+                    break;
+                case 4:
+                    Console.WriteLine ("Thursday");
+                    break;
+                case 5:
+                    Console.WriteLine ("Friday");
+                    break;
+                case 6:
+                    Console.WriteLine ("Saturday");
+                    break;
+
+                default:
+                    Console.WriteLine ("Invalid Input");
+                    break;
+            }
+
+            //hit ENTER to exit the program
+            Console.ReadLine ();
+        }
+    }
+}
+/* Output
+* First run:
+* Enter day number (0-6): 3
+* Wednesday
+
+* Second run:
+* Enter day number (0-6): 9
+* Invalid Input
+*/
