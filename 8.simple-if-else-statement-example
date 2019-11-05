@@ -1,0 +1,47 @@
+// C# program to demonstrate example of 
+// simple if else statement
+using System;
+using System.IO;
+using System.Text;
+
+namespace IncludeHelp {
+    class Test {
+        // Main Method 
+        static void Main (string[] args) {
+            //example 1: Input age and check it's teenage or not
+            int age = 0;
+            Console.Write ("Enter age: ");
+            age = Convert.ToInt32 (Console.ReadLine ());
+
+            //checking condition
+            if (age >= 13 && age <= 19)
+                Console.WriteLine ("{0} is teenage", age);
+            else
+                Console.WriteLine ("{0} is teenage", age);
+
+            //example 2: Input two integer numbers and check 
+            //whether first number is divisible by second or not?
+            int a, b;
+            Console.Write ("Enter first number : ");
+            a = Convert.ToInt32 (Console.ReadLine ());
+            Console.Write ("Enter second number: ");
+            b = Convert.ToInt32 (Console.ReadLine ());
+
+            //checking condition
+            if (a % b == 0)
+                Console.WriteLine ("{0} is divisible by {1}", a, b);
+            else
+                Console.WriteLine ("{0} is not divisible by {1}", a, b);
+
+            //hit ENTER to exit the program
+            Console.ReadLine ();
+        }
+    }
+}
+/* Output
+*   Enter age: 17
+*   17 is teenage
+*   Enter first number : 120
+*   Enter second number: 20
+*   120 is divisible by 20 
+*/
