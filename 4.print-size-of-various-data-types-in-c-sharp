@@ -1,0 +1,28 @@
+// C# program to C# program to print 
+// size of various data types
+using System;
+using System.IO;
+using System.Text;
+
+namespace IncludeHelp {
+    class Test {
+        // Main Method 
+        static void Main (string[] args) {
+            Console.WriteLine ("sizeof(int): {0}", sizeof (int));
+            Console.WriteLine ("sizeof(float): {0}", sizeof (float));
+            Console.WriteLine ("sizeof(char): {0}", sizeof (char));
+            Console.WriteLine ("sizeof(double): {0}", sizeof (double));
+            Console.WriteLine ("sizeof(bool): {0}", sizeof (bool));
+
+            //hit ENTER to exit the program
+            Console.ReadLine ();
+        }
+    }
+}
+/* Output
+* sizeof(int): 4
+* sizeof(float): 4
+* sizeof(char): 2
+* sizeof(double): 8
+* sizeof(bool): 1 
+*/
