@@ -1,0 +1,82 @@
+// C# program to find largest of three numbers 
+using System;
+using System.IO;
+using System.Text;
+
+namespace IncludeHelp {
+    class Test {
+        // Main Method 
+        static void Main (string[] args) {
+            int a;
+            int b;
+            int c;
+            int large;
+
+            //input the numbers
+            Console.Write ("Enter first number : ");
+            a = Convert.ToInt32 (Console.ReadLine ());
+            Console.Write ("Enter second number: ");
+            b = Convert.ToInt32 (Console.ReadLine ());
+            Console.Write ("Enter third number : ");
+            c = Convert.ToInt32 (Console.ReadLine ());
+
+            //finding largest number using if-else
+            if (a > b && a > c)
+                large = a;
+            else if (b > a && b > c)
+                large = b;
+            else large = c;
+
+            //printing 
+            Console.WriteLine ("Using if-else...");
+            Console.WriteLine ("Largest number is {0}", large);
+
+            //finding largest number using ternary operator 
+            large = (a > b && a > c) ? a : (b > a && b > c) ? b : c;
+
+            //printing 
+            Console.WriteLine ("Using ternary operator...");
+            Console.WriteLine ("Largest number is {0}", large);
+
+            //hit ENTER to exit the program
+            Console.ReadLine ();
+        }
+    }
+}
+/* Output
+First run:
+*   Enter first number : 10
+*   Enter second number: 20
+*   Enter third number : 30
+*   Using if-else...
+*   Largest number is 30
+*   Using ternary operator...
+*   Largest number is 30
+
+Second run:
+*   Enter first number : 10
+*   Enter second number: 30
+*   Enter third number : 20
+*   Using if-else...
+*   Largest number is 30
+*   Using ternary operator...
+*   Largest number is 30
+
+Third run:
+*   Enter first number : 30
+*   Enter second number: 20
+*   Enter third number : 10
+*   Using if-else...
+*   Largest number is 30
+*   Using ternary operator...
+*   Largest number is 30
+
+Fourth run:
+*   Enter first number : 10
+*   Enter second number: 20
+*   Enter third number : 20
+*   Using if-else...
+*   Largest number is 20
+*   Using ternary operator...
+*   Largest number is 20
+ */
