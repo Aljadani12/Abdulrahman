@@ -1,0 +1,49 @@
+/*
+This program demonistrates how to swap two numbers */
+using System;
+/*Swapping using third variable */
+namespace swap {
+    class ab {
+        static void Main (String[] args) {
+            int a = 5, b = 3, temp;
+
+            //swapping
+            temp = a;
+            a = b;
+            b = temp;
+
+            Console.WriteLine ("Values after swapping are:");
+            Console.WriteLine ("a=" + a);
+            Console.WriteLine ("b=" + b);
+        }
+    }
+}
+/* Output
+ * Values after swapping are:
+ * a=3
+ * b=5
+ */
+
+//  Swapping without using third variable
+using System;
+namespace swap2 {
+    class abc {
+        static void Main (String[] args) {
+            int a = 10, b = 20;
+
+            //swapping
+            a = a + b;
+            b = a - b;
+            a = a - b;
+
+            Console.WriteLine ("Values after swapping are:");
+            Console.WriteLine ("a=" + a);
+            Console.WriteLine ("b=" + b);
+        }
+    }
+}
+/* Output
+ * Values after swapping are:
+ * a=20
+ * b=10
+ */
