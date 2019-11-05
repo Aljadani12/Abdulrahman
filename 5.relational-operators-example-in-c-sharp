@@ -1,0 +1,112 @@
+/* C# program to demonstrate example of relational operators */
+using System;
+using System.IO;
+using System.Text;
+
+namespace IncludeHelp {
+    class Test {
+        // Main Method 
+        static void Main (string[] args) {
+            // initializng variables
+            int a = 10;
+            int b = 3;
+
+            //printing return type
+            Console.WriteLine ("Return type of == operator: {0}", (a == b).GetType ());
+            Console.WriteLine ("Return type of != operator: {0}", (a != b).GetType ());
+            Console.WriteLine ("Return type of > operator : {0}", (a > b).GetType ());
+            Console.WriteLine ("Return type of >= operator: {0}", (a >= b).GetType ());
+            Console.WriteLine ("Return type of < operator : {0}", (a < b).GetType ());
+            Console.WriteLine ("Return type of <= operator: {0}", (a <= b).GetType ());
+
+            //printing return values
+            Console.WriteLine ("a==b: {0}", (a == b));
+            Console.WriteLine ("a!=b: {0}", (a != b));
+            Console.WriteLine ("a>b : {0}", (a > b));
+            Console.WriteLine ("a>=b: {0}", (a >= b));
+            Console.WriteLine ("a<b : {0}", (a < b));
+            Console.WriteLine ("a<=b: {0}", (a <= b));
+
+            //checking conditions
+            if (a == b)
+                Console.WriteLine ("a is equal to b");
+            else
+                Console.WriteLine ("a is not equal to b");
+            if (a != b)
+                Console.WriteLine ("a is not equal to b");
+            else
+                Console.WriteLine ("a is equal to b");
+            if (a > b)
+                Console.WriteLine ("a is greater than b");
+            else
+                Console.WriteLine ("a is not greater than b");
+            if (a >= b)
+                Console.WriteLine ("a is greater than or equal to b");
+            else
+                Console.WriteLine ("a is not greater than or equal to b");
+            if (a < b)
+                Console.WriteLine ("a is less than b");
+            else
+                Console.WriteLine ("a is not less than b");
+            if (a <= b)
+                Console.WriteLine ("a is less than or equal to b");
+            else
+                Console.WriteLine ("a is not less than or equal to b");
+
+            //checking conditions in another way
+            if ((a == b) == true)
+                Console.WriteLine ("a is equal to b");
+            else
+                Console.WriteLine ("a is not equal to b");
+            if ((a != b) == true)
+                Console.WriteLine ("a is not equal to b");
+            else
+                Console.WriteLine ("a is equal to b");
+            if ((a > b) == true)
+                Console.WriteLine ("a is greater than b");
+            else
+                Console.WriteLine ("a is not greater than b");
+            if ((a >= b) == true)
+                Console.WriteLine ("a is greater than or equal to b");
+            else
+                Console.WriteLine ("a is not greater than or equal to b");
+            if ((a < b) == true)
+                Console.WriteLine ("a is less than b");
+            else
+                Console.WriteLine ("a is not less than b");
+            if ((a <= b) == true)
+                Console.WriteLine ("a is less than or equal to b");
+            else
+                Console.WriteLine ("a is not less than or equal to b");
+
+            //hit ENTER to exit the program
+            Console.ReadLine ();
+        }
+    }
+}
+/* Output
+    Return type of == operator: System.Boolean
+    Return type of != operator: System.Boolean
+    Return type of > operator : System.Boolean
+    Return type of >= operator: System.Boolean
+    Return type of < operator : System.Boolean
+    Return type of <= operator: System.Boolean
+    a==b: False
+    a!=b: True
+    a>b : True
+    a>=b: True
+    a<b : False
+    a<=b: False
+    a is not equal to b
+    a is not equal to b
+    a is greater than b
+    a is greater than or equal to b
+    a is not less than b
+    a is not less than or equal to b
+    a is not equal to b
+    a is not equal to b
+    a is greater than b
+    a is greater than or equal to b
+    a is not less than b
+    a is not less than or equal to b
+ */
