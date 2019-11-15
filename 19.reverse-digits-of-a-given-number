@@ -1,0 +1,20 @@
+using System;
+
+namespace system {
+    class reverse {
+        static void Main (String[] args) {
+            int a = 721, rev = 0, b;
+
+            //condition to check if the number is not 0
+            while (a != 0) {
+                b = a % 10; //extract a digit
+                rev = (rev * 10) + b; //reverse the digits logic
+                a = a / 10; //remained number
+            }
+            Console.WriteLine ("The reverse of the number is: " + rev);
+        }
+    }
+}
+/* Output
+    The reverse of the number is: 127
+*/
