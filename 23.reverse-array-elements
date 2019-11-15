@@ -1,0 +1,51 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ConsoleApplication1 {
+    class Program {
+        static void Main () {
+            int i = 0;
+            int j = 0;
+
+            int[] arr1 = new int[5];
+            int[] arr2 = new int[5];
+
+            //Read numbers into array
+            Console.WriteLine ("Enter numbers : ");
+            for (i = 0; i < 5; i++) {
+                Console.Write ("Element[" + (i + 1) + "]: ");
+                arr1[i] = int.Parse (Console.ReadLine ());
+            }
+
+            //Assign elements of arr1 from last to first element to arr2        
+            for (i = 0, j = arr1.Length - 1; i < arr1.Length; i++) {
+                arr2[i] = arr1[j--];
+            }
+
+            //Reverse array elements in arr2
+            Console.WriteLine ("Reverse elements : ");
+            for (i = 0; i < 5; i++) {
+                Console.WriteLine ("Element[" + (i + 1) + "]: " + arr2[i]);
+
+            }
+
+            Console.WriteLine ();
+        }
+    }
+}
+/*Output
+Enter numbers :
+*   Element[1]: 10
+*   Element[2]: 20
+*   Element[3]: 30
+*   Element[4]: 40
+*   Element[5]: 50
+Reverse elements :
+*   Element[1]: 50
+*   Element[2]: 40
+*   Element[3]: 30
+*   Element[4]: 20
+*   Element[5]: 10
+*/
