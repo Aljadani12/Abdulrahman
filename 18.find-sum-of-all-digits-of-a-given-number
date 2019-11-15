@@ -1,0 +1,28 @@
+/*
+    Finds the sum of all digits of a given number
+*/
+using System;
+
+namespace system
+{
+    class sumofdigits
+    {
+        static void Main(String[] args)
+        {
+
+            int a = 567, sum = 0, b;
+
+            //condition to check if the number is not 0
+            while (a != 0)
+            {
+                b = a % 10; //extract a digit
+                sum = sum + b; //adding the digits
+                a = a / 10; //remained number
+            }
+            Console.WriteLine("The sum of the digits is: " + sum);
+        }
+    }
+}
+/* output
+ The sum of the digits is: 18
+     */
