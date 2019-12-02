@@ -1,0 +1,46 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ConsoleApplication1 {
+    class Demo {
+        private int a, b, c;
+
+        //function definition with default arguments
+        public void setValue (int X, int Y = 10, int Z = 20) {
+            a = X;
+            b = Y;
+            c = Z;
+        }
+
+        //printing the values
+        public void printValue () {
+            Console.WriteLine ("Values are : " + a + ", " + b + ", " + c);
+        }
+
+    }
+
+    class Program {
+        static void Main () {
+            Demo D = new Demo ();
+
+            //passing one argument other will be assigned
+            //with default arguments
+            D.setValue (5);
+            D.printValue ();
+            //passing two arguments other will be assigned
+            //with default arguments
+            D.setValue (5, 8);
+            D.printValue ();
+            //passing all arguemnts
+            D.setValue (5, 8, 13);
+            D.printValue ();
+        }
+    }
+}
+/* Output
+*   Values are : 5, 10, 20
+*   Values are : 5, 8, 20
+*   Values are : 5, 8, 13
+*/
