@@ -1,0 +1,17 @@
+using System;
+using System.IO;
+
+namespace ConsoleApplication1 {
+    class Program {
+        static void Main () {
+            byte[] byteBuff = { 1, 2, 3, 4, 5 };
+
+            File.WriteAllBytes ("Sample.txt", byteBuff);
+
+            Console.WriteLine ("Data Written Successfully");
+        }
+    }
+}
+/* Output
+*   Data written successfully
+*/
