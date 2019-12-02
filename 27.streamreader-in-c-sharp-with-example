@@ -1,0 +1,32 @@
+using System;
+using System.IO;
+//  C# program to read all lines from file
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //create an object of the FileStream in which pass the path  of the  file from which you need read the content.
+            FileStream F = new FileStream("abc.txt", FileMode.OpenOrCreate);
+            //create the object of the StreamReader class and pass object of FileStream as parameter.
+            StreamReader S = new StreamReader(F);
+            //code to read multiple lines
+            String Line = " ";
+            while ((Line = S.ReadLine()) != null)
+            {
+                Console.WriteLine(Line);
+            }
+            //Close the respective files
+            S.Close();
+            F.Close();
+        }
+    }
+}
+/* Output
+*   This is line 1 written in file.
+*   This is line 2 written in file.
+*   This is line 3 written in file.
+*   This is line 4 written in file.
+*   This is line 5 written in file.
+*/
