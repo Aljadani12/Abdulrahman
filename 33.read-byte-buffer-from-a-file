@@ -1,0 +1,22 @@
+using System;
+using System.IO;
+
+namespace ConsoleApplication1 {
+    class Program {
+        static void Main () {
+            byte[] byteBuff;
+
+            byteBuff = File.ReadAllBytes ("Sample.txt");
+
+            Console.WriteLine ("Data of file Sample.txt :");
+            for (int i = 0; i < byteBuff.Length; i++) {
+                Console.Write (byteBuff[i] + " ");
+            }
+            Console.WriteLine ();
+        }
+    }
+}
+/* Output
+Data of file Sample.txt :
+1 2 3 4 5
+ */
