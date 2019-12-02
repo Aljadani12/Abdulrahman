@@ -1,0 +1,58 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ConsoleApplication1
+{
+    class Sample
+    {
+        private int X;
+        private int Y;
+
+        public Sample()
+        {
+            X = 5;
+            Y = 10;
+        }
+
+        public void read()
+        {
+            Console.Write("Enter value of X: ");
+            X = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Enter value of Y: ");
+            Y = Convert.ToInt32(Console.ReadLine());
+        }
+
+        public void print()
+        {
+            Console.WriteLine("Value of X: " + X);
+            Console.WriteLine("Value of Y: " + Y);
+        }
+
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Sample S1 = new Sample();
+
+            S1.print();
+
+            Sample S2 = new Sample();
+
+            S2.read();
+            S2.print();
+
+        }
+    }
+}
+/* Output
+*   Value of X: 5
+*   Value of Y: 10
+*   Enter value of X: 12
+*   Enter value of Y: 15
+*   Value of X: 12
+*   Value of Y: 15
+*/
