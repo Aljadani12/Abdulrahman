@@ -1,0 +1,51 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ConsoleApplication1
+{
+    class Demo
+    {
+
+        public Demo FUN1()
+        {
+            Console.WriteLine("\nFUN1 CALLED");
+
+            return this;
+        }
+
+        public Demo FUN2()
+        {
+            Console.WriteLine("\nFUN2 CALLED");
+
+            return this;
+        }
+
+        public Demo FUN3()
+        {
+            Console.WriteLine("\nFUN3 CALLED");
+
+            return this;
+        }
+
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Demo D;
+
+            D = new Demo();
+
+            D.FUN1().FUN2().FUN3();
+
+        }
+    }
+}
+/* Output
+*   FUN1 CALLED
+*   FUN2 CALLED
+*   FUN3 CALLED
+*/
