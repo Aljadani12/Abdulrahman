@@ -1,0 +1,20 @@
+using System;
+using System.IO;
+
+// C# program to move file from one location to another location
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main()
+        {
+
+            File.Move("source/ABC.TXT", "dest/XYZ.TXT");
+            Console.WriteLine("File moved successfully");
+
+        }
+    }
+}
+/* Output
+*   File moved successfully
+*/
