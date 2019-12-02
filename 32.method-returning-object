@@ -1,0 +1,60 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ConsoleApplication1 {
+    class Sample {
+        //private data member
+        private int value;
+
+        //method to set value
+        public void setValue (int v) {
+            value = v;
+        }
+
+        //method to print value
+        public void printValue () {
+            Console.WriteLine ("Value : " + value);
+        }
+
+        //methdo that will return an object 
+        public Sample AddOb (Sample S1) {
+            //creating object 
+            Sample S = new Sample ();
+            //adding value of passed object in current object
+            //and adding sum in another object 
+            S.value = value + S1.value;
+            //returning object 
+            return S;
+        }
+    }
+
+    //main class containing main method
+    class Program {
+        //main method 
+        static void Main () {
+            //declaring objects 
+            Sample S1 = new Sample ();
+            Sample S2 = new Sample ();
+
+            //setting values to the objects
+            S1.setValue (10);
+            S2.setValue (20);
+
+            //adding value of both objects, result will be 
+            //assigned in the third object
+            Sample S3 = S1.AddOb (S2);
+
+            //printing all values
+            S1.printValue ();
+            S2.printValue ();
+            S3.printValue ();
+        }
+    }
+}
+/* Output
+*   Value : 10
+*   Value : 20
+*   Value : 30
+*/
