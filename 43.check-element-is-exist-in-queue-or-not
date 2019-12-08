@@ -1,0 +1,27 @@
+/* Program to check element is exist in Queue or not in C# */
+
+using System;
+using System.Collections;
+
+namespace ConsoleApplication1 {
+
+    class Program {
+        static void Main () {
+            Queue Q = new Queue (5);
+
+            Q.Enqueue (10);
+            Q.Enqueue (20);
+            Q.Enqueue (30);
+            Q.Enqueue (40);
+
+            if (Q.Contains (30))
+                Console.WriteLine ("Item exists in queue");
+            else
+                Console.WriteLine ("Item does not exist in queue");
+
+        }
+    }
+}
+/* Output
+*   Item exists in queue.
+*/
