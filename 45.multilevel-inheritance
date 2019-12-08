@@ -1,0 +1,36 @@
+/*
+ * C# Program to Demonstrate Multilevel Inheritance
+ */
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+namespace Inherit {
+    class inheri : vehicle {
+        public void Noise () {
+            Console.WriteLine ("All Vehicles Creates Noise !! ");
+        }
+        static void Main (string[] args) {
+            inheri obj = new inheri (); // creating an instance of class inherit
+            obj.mode (); // starting an instance of class mode
+            obj.feature (); // starting an instance of class feature
+            obj.Noise (); // starting an instance of class noise
+            Console.Read ();
+        }
+    }
+    class Mode {
+        public void mode () {
+            Console.WriteLine ("There are Many Modes of Transport !!");
+        }
+    }
+    class vehicle : Mode {
+        public void feature () {
+            Console.WriteLine ("They Mainly Help in Travelling !!");
+        }
+    }
+}
+/* Output
+*   There are Many Modes of Transport !!
+*   They Mainly Help in Travelling !!
+*   All Vehicles Creates Noise !!
+*/
