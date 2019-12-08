@@ -1,0 +1,29 @@
+/* C# program to demonstrate the use of FileStream class */
+using System;
+using System.IO;
+
+namespace ConsoleApplication1 {
+    class Program {
+        static void Main () {
+            byte b1 = 10;
+            byte b2 = 0;
+
+            FileStream f1;
+            FileStream f2;
+
+            f1 = new FileStream ("abc.txt", FileMode.Create, FileAccess.Write);
+
+            f1.WriteByte (b1);
+            f1.Close ();
+
+            f2 = new FileStream ("abc.txt", FileMode.Open, FileAccess.Read);
+
+            b2 = (byte) f2.ReadByte ();
+            Console.WriteLine ("Val : " + b2);
+            f2.Close ();
+        }
+    }
+}
+/* Output
+Val : 10
+*/
