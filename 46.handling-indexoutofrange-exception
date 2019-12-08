@@ -1,0 +1,37 @@
+/*
+ * C# Program to Demonstrate IndexOutOfRange Exception
+ */
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace differnce {
+    class arrayoutofindex {
+        public void calculatedifference () {
+            int difference = 0;
+            // initializing the array
+            int[] number = new int[5] { 1, 2, 3, 4, 5 };
+            try {
+                // looping from start till you get out of index
+                for (int init = 1; init <= 5; init++) {
+                    difference = difference - number[init];
+                }
+                Console.WriteLine ("The difference of the array is:" + difference);
+            } catch (IndexOutOfRangeException e) {
+                Console.WriteLine (e.Message);
+            }
+        }
+    }
+    class classmain {
+        // main method
+        static void Main (string[] args) {
+            arrayoutofindex obj = new arrayoutofindex ();
+            obj.calculatedifference ();
+            Console.ReadLine ();
+        }
+    }
+}
+/* Output
+    Index was outside the bounds of the array
+*/
