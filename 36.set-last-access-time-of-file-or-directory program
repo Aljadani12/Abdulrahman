@@ -1,0 +1,31 @@
+using System;
+using System.IO;
+
+// C# program to set last access time of file or directory
+
+namespace ConsoleApplication1 {
+    class Program {
+        static void Main () {
+            DateTime dt1;
+
+            Console.WriteLine ("Time before set last access time:");
+
+            dt1 = File.GetLastAccessTime ("ABC.TXT");
+            Console.WriteLine ("\tLast Access Time of file(ABC.TXT) : " + dt1);
+
+            File.SetLastAccessTime ("ABC.TXT", DateTime.Now);
+
+            Console.WriteLine ("Time After set last access time:");
+
+            dt1 = File.GetLastAccessTime ("ABC.TXT");
+            Console.WriteLine ("\tLast Access Time of file(ABC.TXT) : " + dt1);
+
+        }
+    }
+}
+/* Output
+*   Time before set last access time:
+        Last Access Time of file(ABC.TXT) : 12/2/2019 12:33:01 AM
+Time After set last access time:
+        Last Access Time of file(ABC.TXT) : 12/7/2019 6:39:03 PM
+*/
