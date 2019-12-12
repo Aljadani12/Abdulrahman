@@ -1,6 +1,9 @@
 /*
  * C# Program to Combine Two Delegates
  */
+ //code from https://www.includehelp.com/dot-net/
+ 
+ 
 using System;
 delegate void dele (string s);
 class TestClass {
