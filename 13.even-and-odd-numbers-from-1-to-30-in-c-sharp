@@ -1,6 +1,9 @@
 /* 
     This program prints all odd and even numbers from 1 to 30 
 */
+
+// code from https://www.includehelp.com/dot-net
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
