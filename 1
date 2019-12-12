@@ -1,0 +1,42 @@
+
+using System;
+
+public class A
+{
+    public int value = 10;
+
+    public class B : A
+    {
+        public int GetValue()
+        {
+            return value;
+        }
+    }
+}
+
+public class C : A
+{
+    public int GetValue2()
+    {
+        value = value + 4;
+        return value;
+    }
+}
+
+public class Example
+{
+    public static void Main(string[] args)
+    {
+        var b = new A.B();
+        Console.WriteLine(b.GetValue());
+        var c = new C();
+        Console.WriteLine(c.GetValue2());
+    }
+}
+// This shows an example of inheritance by making a class and then is inherited to another class and inherited once again
+// Taken and edited from Microsoft, website : https://docs.microsoft.com/en-us/dotnet/csharp/tutorials/inheritance
+
+/*output
+ 10
+14
+*/
