@@ -1,0 +1,85 @@
+
+using System;
+
+namespace InterfaceApplication
+{
+    public interface Students
+    {
+        // interface members
+        void showName();
+        int getID();
+    }
+
+    public class FindStudents : Students
+    {
+        private string name;  //fields of the class
+        private string bdate;
+        private int id;
+
+        public FindStudents()
+        {
+            name = " ";
+            bdate = " ";
+            id = 0;
+        }
+
+        public FindStudents(string n, string bd, int a)
+        {
+            name = n;
+            bdate = bd;
+            id = a;
+        }
+        public int getID()  //Member of the interface that returns the id
+        {
+            return id;
+        }
+        public void showName() //Member of the interface that displays a students name, birth date and ID number
+        {
+            Console.WriteLine("Name: {0}", name);
+            Console.WriteLine("Birth Date: {0}", bdate);
+            Console.WriteLine("ID Number: {0}", getID());
+            Console.WriteLine(" ");
+        }
+    }
+    class Tester
+    {
+
+        static void Main(string[] args)
+        {
+            //Instances of FindStudents()
+            FindStudents s1 = new FindStudents("Abdulrahman Aljadani", "10/5/97", 111111);
+            FindStudents s2 = new FindStudents("Ahmad Alharbi", "8/8/99", 222222);
+            FindStudents s3 = new FindStudents("Turki Alharbi", "11/16/98", 333333);
+            FindStudents s4 = new FindStudents("Ibrahim Aljadani", "1/16/99", 444444);
+
+            s1.showName();
+            s2.showName();
+            s3.showName();
+            s4.showName();
+            Console.ReadKey();
+        }
+    }
+}
+
+/*This program demonstrates interface and instantiation
+ * Original program from https://www.tutorialspoint.com/csharp/csharp_interfaces.htm
+ */
+
+/*output
+ Name: Abdulrahman Aljadani
+Birth Date: 10/5/97
+ID Number: 111111
+
+Name: Ahmad Alharbi
+Birth Date: 8/8/99
+ID Number: 222222
+
+Name: Turki Alharbi
+Birth Date: 11/16/98
+ID Number: 333333
+
+Name: Ibrahim Aljadani
+Birth Date: 1/16/99
+ID Number: 444444
+*/
+
