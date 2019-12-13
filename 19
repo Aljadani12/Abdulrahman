@@ -1,0 +1,63 @@
+
+/*This code uses the private access modifier in which I editied the program to make it print out one of my favorite albums
+The original program can be found on https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/private */
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Accessmodifier
+{
+    class artist
+    {
+        private string artists = "Super Bee";
+        private string album = "Original Ghimchi";
+        public string retreiveartists()
+        {
+            return artists;
+        }
+        public string retrieveabum()
+        {
+            return album;
+        }
+    }
+    class listener
+    {
+        private double listens = 68000;
+        private double downloads = 100000;
+        public double retrievelistens()
+        {
+            return listens;
+        }
+        public double retrievedownloads()
+        {
+            return downloads;
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            artist s = new artist();
+            string a = s.retreiveartists();
+            Console.WriteLine(a);
+            string b = s.retrieveabum();
+            Console.WriteLine(b);
+
+            listener l = new listener();
+            double c = l.retrievelistens();
+            Console.WriteLine("Amount of listeners:{0} ", c);
+            double d = l.retrievedownloads();
+            Console.WriteLine("Amount of Downloads:{0} ", d);
+        }
+    }
+}
+
+/*output
+ Super Bee
+Original Ghimchi
+Amount of listeners:68000
+Amount of Downloads:100000
+*/
