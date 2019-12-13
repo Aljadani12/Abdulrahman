@@ -1,0 +1,48 @@
+using System;
+
+namespace InheritanceApplication
+{
+    class Shape
+    {
+        public void setWidth(int w)
+        {
+            width = w;
+        }
+        public void setHeight(int h)
+        {
+            height = h;
+        }
+        protected int width;
+        protected int height;
+    }
+
+    // Derived class
+    class Triangle : Shape
+    {
+        public float getArea()
+        {
+            return ((width * height) / 2f);
+        }
+    }
+    class TriangleTester
+    {
+        static void Main(string[] args)
+        {
+            Triangle T1 = new Triangle();
+
+            T1.setWidth(5);
+            T1.setHeight(7);
+
+            // Print the area of the object.
+            Console.WriteLine("Total area: {0}", T1.getArea());
+        }
+    }
+}
+//
+//This is an example of inheritance by creating a base class "Shape" and a derived class "Triangle"
+//From : https://www.tutorialspoint.com/csharp/csharp_inheritance.htm
+
+/*
+ output
+ Total area: 17.5
+ */
