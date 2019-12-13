@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Record recrd = new Record();
+        }
+        public class Record
+        {
+            public Record()
+            {
+                System.Console.WriteLine("Spinning");
+            }
+            ~Record()
+            {
+                System.Console.WriteLine("It has been spun");
+            }
+        }
+    }
+}
+//The following code is a very simple example of a destructor
+//The purpose of a destructor is to get rid of no longer needed objects in your program
+//The original code can be found at this link: http://www.informit.com/articles/article.aspx?p=101373&seqNum=13
+
+/*
+ output
+ Spinning
+ */
