@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace example
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] arr = new int[6];
+            Console.WriteLine(GetInt(arr, 7));
+        }
+
+        static int GetInt(int[] array, int index)
+        {
+            
+            try
+            {
+                return array[index];
+            }
+            catch (System.IndexOutOfRangeException e)
+            {
+                throw new System.ArgumentOutOfRangeException(
+                    "Parameter index is out of range.", e);
+            }
+            
+        }
+    }
+}
+//The following is an example of C# exception handling. The code will generate a new array.
+//Then, run a function to try to return the value of the index.
+//Credit: https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/exceptions/exception-handling
+
