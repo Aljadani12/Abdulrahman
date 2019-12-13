@@ -1,0 +1,31 @@
+using System;
+namespace Constructore
+{
+    class constroctor2
+    {
+        public int a, b;
+        public constroctor2(int x, int y)
+        {
+            a = x;
+            b = y;
+        }
+    }
+    class MainClass
+    {
+        static void Main()
+        {
+            constroctor2 v = new constroctor2(100, 795);
+            Console.WriteLine("value of a=" + v.a);
+            Console.WriteLine("value of b=" + v.b);
+            Console.Read();
+        }
+    }
+}
+// This Code goes over basic constructor with a parameter. It was slightly edited
+//Created by Vithal Wadje and found from https://www.c-sharpcorner.com/UploadFile/0c1bb2/constructors-and-its-types-in-C-Sharp/ 
+
+/*
+ output
+ value of a=100
+value of b=795
+*/
