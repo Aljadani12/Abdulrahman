@@ -1,0 +1,91 @@
+// This sample code is a game that tests your ability to stop a timer at 5 seconds
+// and stores the result in a high score file that it creates.
+// Made by me
+
+using System;
+using System.IO;
+using System.Collections.Generic;
+using System.Linq;
+using System.Diagnostics;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+
+        static void Main(string[] args)
+        {
+
+            bool quitGame = false;
+            while (quitGame == false)
+            {
+                Console.WriteLine("The goal of this game is to stop the timer at exactly 5 seconds");
+                Stopwatch stopWatch = new Stopwatch();
+                Console.WriteLine("Press Enter to Start Timer");
+                string userInput = Console.ReadLine();
+                stopWatch.Start();
+                Console.WriteLine("Press Enter to Stop Timer");
+                userInput = Console.ReadLine();
+                stopWatch.Stop();
+                float elapsedTime = stopWatch.ElapsedMilliseconds / 1000f;
+                Console.WriteLine("Elapsed Time is {0}", elapsedTime);
+                float RelativeTime = 0f;
+                if (elapsedTime < 5)
+                {
+
+                    RelativeTime = 5 - elapsedTime;
+                    RelativeTime = (float)Math.Truncate(100 * RelativeTime) / 100;
+                    Console.WriteLine("You were {0} too early\n", RelativeTime);
+                }
+                if (elapsedTime > 5)
+                {
+                    RelativeTime = elapsedTime - 5;
+                    RelativeTime = (float)Math.Truncate(100 * RelativeTime) / 100;
+                    Console.WriteLine("You were {0} too late\n", RelativeTime);
+                }
+                if (elapsedTime == 5)
+                    Console.WriteLine("You hit exactly 5 seconds, Congratulations!\n");
+
+                var systemPath = System.Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData);
+                var complete = Path.Combine(systemPath, "timegameHSfile");
+                if (!File.Exists(complete))  // if it doesn't exist, create
+                    File.Create(complete).Close();
+                if (System.IO.File.ReadAllText(complete) == "")
+                {
+                    System.IO.File.WriteAllText(complete, RelativeTime.ToString());
+                    Console.WriteLine("Congratulations! New High Score!\n");
+                }
+                else
+                {
+                    float currentHS = float.Parse(System.IO.File.ReadAllText(complete));
+                    if (RelativeTime < currentHS)
+                    {
+
+                        System.IO.File.WriteAllText(complete, RelativeTime.ToString());
+                        Console.WriteLine("Congratulations! New High Score!\n");
+                    }
+                    else
+                        Console.WriteLine("Current High Score is {0}\n", currentHS);
+                }
+            }
+        }
+    }
+}
+/*output
+ The goal of this game is to stop the timer at exactly 5 seconds
+Press Enter to Start Timer
+7
+Press Enter to Stop Timer
+2
+Elapsed Time is 3.214
+You were 1.78 too early
+
+Congratulations! New High Score!
+
+The goal of this game is to stop the timer at exactly 5 seconds
+Press Enter to Start Timer
+
+*/
