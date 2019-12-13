@@ -1,0 +1,45 @@
+using System;
+
+namespace ErrorHandlingApplication
+{
+    class DivNumbers
+    {
+        int result;
+
+        DivNumbers()
+        {
+            result = 0;
+        }
+        public void division(int num1, int num2)
+        {
+            try
+            {
+                result = num1 / num2;
+            }
+            catch (DivideByZeroException e)
+            {
+                Console.WriteLine("Exception caught: {0}", e);
+            }
+            finally
+            {
+                Console.WriteLine("Result: {0}", result);
+            }
+        }
+        static void Main(string[] args)
+        {
+            DivNumbers d = new DivNumbers();
+            d.division(25, 0);
+            Console.ReadKey();
+        }
+    }
+}
+//Code from www.tutorialspoint.com/csharp/csharp_exception_handling.htm
+//uses a try catch block and an exception class to catch a divide by 0 error and print out an error message
+
+/*
+ output
+ Exception caught: System.DivideByZeroException: Attempted to divide by zero.
+   at ErrorHandlingApplication.DivNumbers.division(Int32 num1, Int32 num2) in C:\Users\d7oom\OneDrive\Desktop\Work\Work\Program.cs:line 17
+Result: 0
+
+ */
