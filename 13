@@ -1,0 +1,145 @@
+using System;
+using System.Threading;
+
+namespace rockPaperScissors
+{
+    class Program
+    {
+
+        static int cursor;
+        static int[] score;
+
+        static void Main(string[] args)
+        {
+
+            score = new int[2];
+            UpdateScreen();
+            while (true) { Cursor(); }
+
+        }
+
+        static void UpdateScreen()
+        {
+
+            Console.Clear();
+            Console.WriteLine("Score:   " + score[0] + "-" + score[1]);
+            Console.WriteLine("Please Choose An Action:\n");
+            if (cursor == 0) { Console.WriteLine("> Rock"); } else { Console.WriteLine("  Rock"); }
+            if (cursor == 1) { Console.WriteLine("> Paper"); } else { Console.WriteLine("  Paper"); }
+            if (cursor == 2) { Console.WriteLine("> Scissors"); } else { Console.WriteLine("  Scissors"); }
+
+        }
+        static void Cursor()
+        {
+
+            ConsoleKeyInfo key = Console.ReadKey();
+
+            if (key.Key.ToString() == "Enter")
+            {
+
+                Selection();
+
+            }
+            if (key.Key.ToString() == "UpArrow")
+            {
+
+                if (cursor > 0) { cursor -= 1; }
+                UpdateScreen();
+
+            }
+            if (key.Key.ToString() == "DownArrow")
+            {
+
+                if (cursor < 2) { cursor += 1; }
+                UpdateScreen();
+
+            }
+
+        }
+
+        static void Selection()
+        {
+
+            Console.Clear();
+            int com = Computer();
+
+            Console.WriteLine("Results Of The Match:\n");
+            Console.WriteLine("You picked " + RPS(cursor) + "!");
+            Console.WriteLine("Foe picked " + RPS(com) + "!");
+            Calculate(cursor, com);
+
+            Console.WriteLine("\n5 seconds 'till next match!");
+            Thread.Sleep(5000); UpdateScreen();
+
+        }
+        static void Calculate(int _player, int _foe)
+        {
+
+            if (_player == _foe) { Console.WriteLine("It's a draw!"); }
+            if (_player == 0 & _foe == 1) { Console.WriteLine("Enemy wins!"); score[1] += 1; }
+            if (_player == 0 & _foe == 2) { Console.WriteLine("Player wins!"); score[0] += 1; }
+            if (_player == 1 & _foe == 2) { Console.WriteLine("Enemy wins!"); score[1] += 1; }
+            if (_player == 1 & _foe == 0) { Console.WriteLine("Player wins!"); score[0] += 1; }
+            if (_player == 2 & _foe == 0) { Console.WriteLine("Enemy wins!"); score[1] += 1; }
+            if (_player == 2 & _foe == 1) { Console.WriteLine("Player wins!"); score[0] += 1; }
+
+        }
+        static int Computer()
+        {
+
+            return new Random().Next(0, 3);
+
+        }
+        static string RPS(int _in)
+        {
+
+            string output = "";
+
+            switch (_in)
+            {
+                case 0:
+                    output = "Rock";
+                    break;
+
+                case 1:
+                    output = "Paper";
+                    break;
+
+                case 2:
+                    output = "Scissors";
+                    break;
+
+                default:
+                    output = "Rock";
+                    break;
+
+            }
+
+            return output;
+
+        }
+
+    }
+
+}
+//Rock Paper Scissors Program
+
+/*
+ output
+ Score:   0-4
+Please Choose An Action:
+
+> Rock
+  Paper
+  Scissors
+
+    Results Of The Match:
+
+You picked Rock!
+Foe picked Rock!
+It's a draw!
+
+5 seconds 'till next match!
+
+     
+     */
