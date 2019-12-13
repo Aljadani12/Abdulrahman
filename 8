@@ -1,0 +1,32 @@
+using System;
+
+namespace Akadia.BasicDelegate
+{
+    // Declaration
+    public delegate void SimpleDelegate();
+
+    class TestDelegate
+    {
+        public static void MyFunc()
+        {
+            Console.WriteLine("I was called by delegate ...");
+        }
+
+        public static void Main()
+        {
+            // Instantiation
+            SimpleDelegate simpleDelegate = new SimpleDelegate(MyFunc);
+
+            // Invocation
+            simpleDelegate();
+        }
+    }
+}
+//The following code is a very simple example of delegates
+//A delegate allows us to specify what the function we're calling looks like wthout having to specify which function to call
+//The code was pulled from https://www.akadia.com/services/dotnet_delegates_and_events.html
+
+/*
+ output
+ I was called by delegate ...
+ */
