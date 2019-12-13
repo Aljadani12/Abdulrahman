@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+
+//Using a while statement and some library terms, the program will output the reverse of whatever number the user inputs
+//Original program can be found at https://www.sanfoundry.com/csharp-programs-generate-number-reverse/
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int num, reverse = 0;
+            Console.WriteLine("Enter a Number : ");
+            num = int.Parse(Console.ReadLine());
+            while (num != 0)
+            {
+                reverse = reverse * 10;
+                reverse = reverse + num % 10;
+                num = num / 10;
+            }
+            Console.WriteLine("Reverse of Entered Number is : " + reverse);
+            Console.ReadLine();
+        }
+    }
+}
+
+//Program that asks for a number input from the user and then displays the reverse of it
+
+/*output
+ Enter a Number :
+6
+Reverse of Entered Number is : 6
+4
+*/
