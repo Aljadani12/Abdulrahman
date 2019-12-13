@@ -1,0 +1,34 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+//Every time the program is run it generates a random tag for you 
+//Written by myself just for fun
+
+namespace Program_1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Random rnd = new Random();
+            string[] gamertag = { "Snake", "Demon", "M01st", "Sp//der", "Zer0", "Kennedy" };
+            string[] gamertag2 = { "Eater", "S1ayer", "Pr0tocol", "T0dd", "Fortn1te" };
+            int index = rnd.Next(gamertag.Length);
+            int index2 = rnd.Next(gamertag2.Length);
+            Console.WriteLine("Your gamer tag is");
+            Console.WriteLine("xX{0}{1}Xx", gamertag[index], gamertag2[index2]);
+        }
+    }
+}
+
+//Fun little program that generates a random gamer tag every time it is run.
+
+/*output
+ Your gamer tag is
+xXSnakeS1ayerXx
+*/
+
